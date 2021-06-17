@@ -116,16 +116,17 @@ function scorerPrompt(word) {
      if(chosen==0){
        console.log(`word = ${word}`);
        console.log("algorithm name :"+ scoringAlgorithms[0].name);
-      console.log(simpleScore(word) );
+       console.log(scoringAlgorithms[0].scoringFunction(word) )
+      //console.log(simpleScore(word) );
      }
      if (chosen==1){
        console.log("algorithm name :"+ scoringAlgorithms[1].name);
-      console.log(scoringAlgorithms[1].scorerFunction(word) );
+      console.log(scoringAlgorithms[1].scoringFunction(word) );
       
      }
      if (chosen==2){
        console.log("algorithm name :"+ scoringAlgorithms[2].name);
-      console.log(scoringAlgorithms[2].scorerFunction(word));
+      console.log(scoringAlgorithms[2].scoringFunction(word));
       }
 
 
