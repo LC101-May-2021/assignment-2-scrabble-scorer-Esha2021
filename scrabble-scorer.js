@@ -33,7 +33,7 @@ let word="";
 function initialPrompt() {
    console.log("Let's play some scrabble! ");
    let word=input.question("\nEnter a word to score:");
-  console.log( oldScrabbleScorer(word));
+  //console.log( oldScrabbleScorer(word));
   return word;
 }
 
@@ -110,23 +110,27 @@ scoringFunction: simpleScore
 }];
 
 function scorerPrompt(word) {
-  
-     let chosen = input.question("please enter number to select algorithms:");
+  console.log("\n Which scoring Algorithms would you like to use?")
+  console.log("0 - Simple: One point per character");
+  console.log("1 - Vowel Bonus: Vowels are worth 3 points");
+  console.log("2 - Scrabble: Uses scrabble point system");
+  let chosen = input.question("\n Enter 0,1,or 2:");
+
      
      if(chosen==0){
        console.log(`word = ${word}`);
-       console.log("algorithm name :"+ scoringAlgorithms[0].name);
-       console.log(scoringAlgorithms[0].scoringFunction(word) )
+       console.log("\n Algorithm name :"+ scoringAlgorithms[0].name);
+       console.log("Scorer function Result:"+ scoringAlgorithms[0].scoringFunction(word) )
       //console.log(simpleScore(word) );
      }
      if (chosen==1){
-       console.log("algorithm name :"+ scoringAlgorithms[1].name);
-      console.log(scoringAlgorithms[1].scoringFunction(word) );
+       console.log("\n Algorithm name :"+ scoringAlgorithms[1].name);
+      console.log("scorer function Result:"+ scoringAlgorithms[1].scoringFunction(word) );
       
      }
      if (chosen==2){
-       console.log("algorithm name :"+ scoringAlgorithms[2].name);
-      console.log(scoringAlgorithms[2].scoringFunction(word));
+       console.log("\n Algorithm name :"+ scoringAlgorithms[2].name);
+      console.log("scorer function Result:"+ scoringAlgorithms[2].scoringFunction(word));
       }
 
 
@@ -142,7 +146,7 @@ function transform(oldPointStructure){
   }
   return newObj;
 }
-console.log(transform(oldPointStructure));
+//console.log(transform(oldPointStructure));
   
 
 let newPointStructure = transform(oldPointStructure);
